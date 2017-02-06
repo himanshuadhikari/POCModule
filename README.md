@@ -7,10 +7,12 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 - Tag your component - `git tag -a v0.1.0 -m "basic bower component"`.
 - Push tag to remote repo - `git push origin --tags`
 - Register you component on bower by `bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>`
-5. Run bower info YourAwesomePackageName  - in our case bower info poc-module
-	You should see something like this:
+5. Run `bower info YourAwesomePackageName`  - in our case bower info poc-module
 
-  bower poc-module#*          not-cached https://github.com/ttn-himanshu/POCModule.git#*
+####You should see something like this:####
+
+	```
+        bower poc-module#*          not-cached https://github.com/ttn-himanshu/POCModule.git#*
 	bower poc-module#*             resolve https://github.com/ttn-himanshu/POCModule.git#*
 	bower poc-module#*            download https://github.com/ttn-himanshu/POCModule/archive/v0.1.0.tar.gz
 	bower poc-module#*             extract archive.tar.gz
@@ -42,4 +44,5 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 
 	Available versions:
 	  - 0.1.0
+	 ```
 6. Now on any project you can install this module by bower install <module-name> poc-module
