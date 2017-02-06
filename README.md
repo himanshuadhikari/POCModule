@@ -3,8 +3,9 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 
 # Install
 You can install this package with `bower`.
-
-```bower install poc-module```
+```
+bower install poc-module
+```
 
 
 ### Steps to create a bower component:
@@ -53,7 +54,10 @@ Available versions:
 ```
 
 - Now on any project you can install this module by 
-```bower install poc-module```
+
+```
+bower install poc-module
+```
 
 
 ### Updating and maintenance:
