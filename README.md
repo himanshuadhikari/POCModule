@@ -11,22 +11,26 @@ bower install poc-module
 ### Steps to create a bower component:
 
 - Initialize bower on your project - `bower init`. Fill the fields. (**Note** : git/bitbucket repository url is necessary and package name should be in small letters).
+
 - Tag your component - 
 ```
 git tag -a v0.1.0 -m "basic bower component"
-```.
+```
+
 - Push tag to remote repo - 
 ```
 git push origin --tags
 ```
+
 - Register you component on bower by 
 ```
 bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
 ```
-- Run 
+- After registering run 
 ```
 bower info YourAwesomePackageName
-```  - in our case `bower info poc-module`
+```  
+in our case `bower info poc-module`
 
 #### You should see something like this:
 
