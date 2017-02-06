@@ -7,7 +7,7 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 - Tag your component - `git tag -a v0.1.0 -m "basic bower component"`.
 - Push tag to remote repo - `git push origin --tags`
 - Register you component on bower by `bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>`
-- Run `bower info YourAwesomePackageName`  - in our case bower info poc-module
+- Run `bower info YourAwesomePackageName`  - in our case `bower info poc-module`
 
 ####You should see something like this:
 
@@ -47,11 +47,26 @@ Available versions:
 ```
 
 - Now on any project you can install this module by 
-	```bower install poc-module```
+```bower install poc-module```
 
 
 ### Updating and maintenance:
 - Make the necessary changes to your package/module (bug fixes, new features, etc, etc...whatever it might be).
 - Update your `bower.json` file with the new version for the package.
 - Commit your changes, tag the repository and push your changes to git (don't forget to include the --tags switch with your push command to your remote!)
+
+
+There's few things to notice here. Bower relies solely on git/bitbucket tags for packaging version information. This means whenever you want to release a new version of your module you have only to create a new tag in your repository with the new version number for the update. Also don't forget to update the version number on bower.json file also.
+
+####Steps to update bower component
+```
+# commit your changes
+git commit -am "Made some awesome new changes, now its even awesomer"
+
+# tag the commit
+git tag -a v0.0.2 -m "Release version 0.0.2"
+
+# push to GitHub
+git push origin master --tags  
+```
 
