@@ -1,12 +1,12 @@
 # POCModule
 This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower component so that it could be inserted into any angular app.
 
-Steps to create a bower component:
+### Steps to create a bower component:
 
-- Initialize bower on your project (git repository url is necessary/package name should be in small letters).
-- Tag your component - git tag -a v0.1.0 -m "basic bower component".
-- Push tag to remote repo - git push origin --tags
-- Register you component on bower by bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
+- Initialize bower on your project - `bower init`. Fill the fields. (**Note** : git/bitbucket repository url is necessary and package name should be in small letters).
+- Tag your component - `git tag -a v0.1.0 -m "basic bower component"`.
+- Push tag to remote repo - `git push origin --tags`
+- Register you component on bower by `bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>`
 5. Run bower info YourAwesomePackageName  - in our case bower info poc-module
 	You should see something like this:
 
