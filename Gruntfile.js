@@ -16,6 +16,7 @@ module.exports = function(grunt) {
         connect: {
             dev: {
                 options: {
+                    open: true,
                     port: 8083,
                     base: 'src',
                     keepalive: true,
@@ -28,6 +29,11 @@ module.exports = function(grunt) {
             dev: ['connect:dev', 'watch:dev'] // connect and watch running concurrently!
         }
 
+    });
+
+
+    grunt.registerTask('serve', function(target) {
+        grunt.task.run(['concurrent']);
     });
 
 };
