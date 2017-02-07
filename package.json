@@ -1,0 +1,39 @@
+{
+  "name": "poc-module",
+  "version": "0.1.0",
+  "description": "This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower component so that it could be inserted into any angular app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttn-himanshu/POCModule.git"
+  },
+  "keywords": [
+    "poc",
+    "angular-component",
+    "bower-component"
+  ],
+  "author": "himanshu adhikari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttn-himanshu/POCModule/issues"
+  },
+  "homepage": "https://github.com/ttn-himanshu/POCModule#readme",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}
