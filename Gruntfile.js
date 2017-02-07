@@ -1,23 +1,33 @@
 module.exports = function(grunt) {
 
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
     grunt.initConfig({
-        jshint: {
-            files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
-            options: {
-                globals: {
-                    jQuery: true
+        watch: {
+            dev: {
+                options: {
+                    livereload: true // livereaload option added!
+                },
+                files: 'src/views/index.html'
+            }
+        },
+        connect: {
+            dev: {
+                options: {
+                    port: 8083,
+                    base: 'src',
+                    keepalive: true,
+                    hostname: '127.0.0.1',
+                    livereload: true
                 }
             }
         },
-        watch: {
-            files: ['<%= jshint.files %>'],
-            tasks: ['jshint']
+        concurrent: {
+            dev: ['connect:dev', 'watch:dev'] // connect and watch running concurrently!
         }
+
     });
-
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
-    grunt.registerTask('default', ['jshint']);
 
 };
