@@ -1,12 +1,12 @@
 {
     "name": "poc-module",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "homepage": "https://github.com/ttn-himanshu/POCModule",
     "authors": [
         "himanshu adhikari <himanshu.adhikari@tothenew.com>"
     ],
     "description": "The goal of this POC is to create standalone modules that could be inserted / deployed into another angular app (angular app) independently",
-    "main": "dist/pocmodue.js",
+    "main": "dist/pocmodule.js",
     "license": "MIT",
     "ignore": [
         "**/.*",
