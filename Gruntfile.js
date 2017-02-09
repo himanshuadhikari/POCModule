@@ -4,6 +4,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     var staticConnect = require("serve-static")
 
@@ -70,6 +73,36 @@ module.exports = function(grunt) {
                 browsers: ['PhantomJS'],
                 logLevel: 'ERROR'
             }
+        },
+        concat: {
+            options: {
+                separator: ';',
+            },
+            dist: {
+                src: ['src/scripts/**/*.js'],
+                dest: 'dist/pocmodule.js',
+            }
+        },
+        uglify: {
+            options: {
+                compress: true
+            },
+            my_target: {
+                files: {
+                    'dist/pocmodule.min.js': ['dist/pocmodule.js']
+                }
+            }
+        },
+        htmlmin: { // Task
+            dist: { // Target
+                options: { // Target options
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: { // Dictionary of files
+                    'dist/views/directive/testDirectiveTemplate.html': 'src/views/directive/testDirectiveTemplate.html'
+                }
+            }
         }
     });
 
@@ -80,6 +113,12 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', [
         'karma:unit'
+    ]);
+
+    grunt.registerTask('build', [
+        'concat',
+        'uglify',
+        'htmlmin'
     ]);
 
 };
