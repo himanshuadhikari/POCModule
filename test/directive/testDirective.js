@@ -6,20 +6,29 @@ describe('service: testDirective', function() {
     beforeEach(module("mytestapp.templates"));
     var scope,
         element,
-        compiled;
+        directive,
+        controller,
+        isolateScope;
 
     beforeEach(inject(function($rootScope, $compile) {
         scope = $rootScope.$new();
 
         element = angular.element('<test-directive></test-directive>');
-        compiled = $compile(element)(scope);
-        console.log("beforeEach");
+        directive = $compile(element)(scope);
 
-        $rootScope.$digest();
+        scope.$digest();
+        isolateScope = directive.isolateScope()
+            // controller = template.controller('testDirective');
     }));
 
 
-    it('should test testFactory', function() {
-        console.log("test block", compiled);
+    it('should test testDirective', function() {
+        expect(!!directive).toBe(true);
+        expect(isolateScope.greeting).toBe('hello world!!!');
+    });
+
+    it('should test testDirective controller', function() {
+        expect(typeof isolateScope.getGreetingMessage).toBe('function');
+        expect(isolateScope.getGreetingMessage()).toBe('hello world!!!');
     });
 });
