@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-angular-templates');
 
     var staticConnect = require("serve-static")
 
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
             }
         },
         concurrent: {
-            dev: ['connect:livereload', 'watch:dev'] // connect and watch running concurrently!
+            dev: ['connect:livereload', 'watch:dev', 'ngtemplates'] // connect and watch running concurrently!
         },
         karma: {
             unit: {
@@ -93,15 +93,11 @@ module.exports = function(grunt) {
                 }
             }
         },
-        htmlmin: { // Task
-            dist: { // Target
-                options: { // Target options
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: { // Dictionary of files
-                    'dist/views/directive/testDirectiveTemplate.html': 'src/views/directive/testDirectiveTemplate.html'
-                }
+        ngtemplates: {
+            'mytestapp': {
+                cwd: 'src',
+                src: 'views/**/*.html', // where my view files are
+                dest: 'src/scripts/templates.js' // single file of $templateCache
             }
         }
     });
@@ -117,8 +113,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'concat',
-        'uglify',
-        'htmlmin'
+        'uglify'
     ]);
 
 };

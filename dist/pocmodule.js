@@ -3,9 +3,9 @@
 ;'use strict';
 
 angular.module('mytestapp')
-    .directive('testDirective', function() {
+    .directive('testDirective', function($templateCache) {
         return {
-            templateUrl: 'views/directive/testDirectiveTemplate.html',
+            template: $templateCache.get('views/directive/testDirectiveTemplate.html'),
             restrict: 'E',
             transclude: true,
             scope: {},
@@ -35,3 +35,11 @@ angular.module('mytestapp')
             "greeting": "hello"
         }
     });
+;angular.module('mytestapp').run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('views/directive/testDirectiveTemplate.html',
+    "<h1>{{greeting}}</h1>\n"
+  );
+
+}]);

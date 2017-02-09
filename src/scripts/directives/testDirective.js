@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('mytestapp')
-    .directive('testDirective', function() {
+    .directive('testDirective', function($templateCache) {
         return {
-            templateUrl: 'views/directive/testDirectiveTemplate.html',
+            template: $templateCache.get('views/directive/testDirectiveTemplate.html'),
             restrict: 'E',
             transclude: true,
             scope: {},
