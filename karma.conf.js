@@ -19,7 +19,8 @@ module.exports = function(config) {
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'src/scripts/**/*.js',
-            'test/**/*.js'
+            'test/**/*.js',
+            'src/views/**/*.html'
         ],
 
 
@@ -29,8 +30,14 @@ module.exports = function(config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+            'src/views/**/*.html': ['ng-html2js']
+        },
 
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'src/',
+            moduleName: "mytestapp.templates"
+        },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'

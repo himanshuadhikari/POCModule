@@ -8,6 +8,7 @@ angular.module('mytestapp')
             transclude: true,
             scope: {},
             link: function(scope, element, attrs) {
+                console.log("directive initiated");
                 scope.greeting = scope.getGreetingMessage();
             },
             controller: function($scope, testService, testFactory) {
