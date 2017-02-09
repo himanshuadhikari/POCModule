@@ -42,6 +42,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-karma');
 
     var staticConnect = require("serve-static")
 
@@ -79,10 +80,35 @@ module.exports = function(grunt) {
                         ];
                     }
                 }
+            },
+            test: {
+                options: {
+                    port: 9001,
+                    middleware: function(connect) {
+                        return [
+                            staticConnect('.tmp'),
+                            staticConnect('test'),
+                            connect().use(
+                                '/bower_components',
+                                staticConnect('./bower_components')
+                            ),
+                            staticConnect('src')
+                        ];
+                    }
+                }
             }
         },
         concurrent: {
             dev: ['connect:livereload', 'watch:dev'] // connect and watch running concurrently!
+        },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
+                port: 9999,
+                singleRun: true,
+                browsers: ['PhantomJS'],
+                logLevel: 'ERROR'
+            }
         }
     });
 
@@ -90,5 +116,9 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', function(target) {
         grunt.task.run(['concurrent']);
     });
+
+    grunt.registerTask('test', [
+        'karma:unit'
+    ]);
 
 };
