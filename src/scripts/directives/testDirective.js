@@ -6,13 +6,14 @@ angular.module('mytestapp')
             templateUrl: 'views/directive/testDirectiveTemplate.html',
             restrict: 'E',
             transclude: true,
-            scope: {
-            },
+            scope: {},
             link: function(scope, element, attrs) {
-
+                scope.greeting = scope.getGreetingMessage();
             },
-            controller: function($scope) {
-
+            controller: function($scope, testService, testFactory) {
+                $scope.getGreetingMessage = function() {
+                    return testService.greeting + " " + testFactory.message;
+                }
             }
         };
     });
