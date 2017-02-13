@@ -14,17 +14,17 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 options: {
-                    livereload: true // livereaload option added!
+                    livereload: 35730 // livereaload option added!
                 },
                 files: ['src/index.html', 'src/scripts/**/*.js']
             }
         },
         connect: {
             options: {
-                port: 9000,
+                port: 8000,
                 // Change this to '0.0.0.0' to access the server from outside.
                 hostname: 'localhost',
-                livereload: 35729,
+                livereload: 35730,
                 keepalive: true
             },
             livereload: {

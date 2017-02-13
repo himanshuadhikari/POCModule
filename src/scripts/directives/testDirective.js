@@ -12,7 +12,7 @@ angular.module('mytestapp')
             },
             controller: function($scope, testService, testFactory) {
                 $scope.getGreetingMessage = function() {
-                    return testService.greeting + " " + testFactory.message;
+                    return testService.getGreetings() + " " + testFactory.message;
                 }
             }
         };

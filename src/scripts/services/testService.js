@@ -2,7 +2,7 @@
 
 angular.module('mytestapp')
     .service('testService', function() {
-        return {
-            "greeting": "hello"
+        this.getGreetings = function() {
+            return "hello";
         }
     });
