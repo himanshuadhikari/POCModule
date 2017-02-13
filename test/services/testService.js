@@ -17,6 +17,6 @@ describe('service: testService', function() {
     it('should test testFactory', function() {
         expect(!!service).toEqual(true);
         expect(service).toBeDefined();
-        expect(service).toEqual({ "greeting": "hello" });
+        expect(service.getGreetings()).toEqual("hello");
     });
 });
