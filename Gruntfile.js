@@ -85,9 +85,9 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                compress: true
+                preserveComments: 'some',
             },
-            my_target: {
+            min: {
                 files: {
                     'dist/pocmodule.min.js': ['dist/pocmodule.js']
                 }

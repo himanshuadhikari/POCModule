@@ -14,7 +14,7 @@ angular.module('mytestapp')
             },
             controller: function($scope, testService, testFactory) {
                 $scope.getGreetingMessage = function() {
-                    return testService.greeting + " " + testFactory.message;
+                    return testService.getGreetings() + " " + testFactory.message;
                 }
             }
         };
@@ -31,8 +31,8 @@ angular.module('mytestapp')
 
 angular.module('mytestapp')
     .service('testService', function() {
-        return {
-            "greeting": "hello"
+        this.getGreetings = function() {
+            return "hello";
         }
     });
 ;angular.module('mytestapp').run(['$templateCache', function($templateCache) {
