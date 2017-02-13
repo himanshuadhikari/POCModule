@@ -1,12 +1,12 @@
 # POCModule
 This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower component so that it could be inserted into any angular app.
 
-# Install
+## Install
 You can install this package with `bower`.
 ```
 bower install poc-module
 ```
-# Usage
+## Usage
 Add following script to index.html
 ```
 <script src="bower_components/poc-module/dist/pocmodule.js"></script>
