@@ -6,7 +6,15 @@ You can install this package with `bower`.
 ```
 bower install poc-module
 ```
-
+# Usage
+Add following script to index.html
+```
+<script src="bower_components/poc-module/dist/pocmodule.js"></script>
+```
+then use below directive on html
+```
+<test-directive></test-directive>
+```
 
 ### Steps to create a bower component:
 
