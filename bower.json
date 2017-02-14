@@ -1,7 +1,7 @@
 {
     "name": "poc-module",
-    "version": "0.1.7",
-    "homepage": "https://github.com/ttn-himanshu/POCModule",
+    "version": "0.1.8",
+    "homepage": "https://bitbucket.org/himanshu_adhikari/pocmodule",
     "authors": [
         "himanshu adhikari <himanshu.adhikari@tothenew.com>"
     ],
