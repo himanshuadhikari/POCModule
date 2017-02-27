@@ -73,13 +73,6 @@ bower install poc-module
 ```
 
 
-
-
-## Install
-You can install this package with `bower`.
-```
-bower install poc-module
-```
 ## Usage
 Add following script to index.html
 ```
