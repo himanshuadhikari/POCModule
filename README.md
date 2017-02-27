@@ -1,5 +1,9 @@
 # POCModule
-This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower component so that it could be inserted into any angular app.
+This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower components so that it could be inserted into any angular app.
+
+## Install generator-wcmodules
+First, install [generator-wcmodules](https://github.com/ttn-himanshu/generator-wcmodules ).
+
 
 ## Install
 You can install this package with `bower`.
