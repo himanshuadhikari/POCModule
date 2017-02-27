@@ -1,5 +1,5 @@
 # Creating Components Using Bower
-This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower components so that it could be inserted into any angular app.
+> This repo is for distribution on bower. The goal of this repo is to do a POC for creating a standalone bower components so that it could be inserted into any angular app.
 
 ### Steps to create a bower component:
 
