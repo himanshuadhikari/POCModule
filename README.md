@@ -3,7 +3,7 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 
 ### Steps to create a bower component:
 
-- Initialize bower on your project - `bower init`. Fill the fields. (**Note** : git/bitbucket repository url is necessary and package name should be in small letters).
+- First, install generator-wcmodules. This will create a basic bower component structure with all the required dependencies.
 
 - Tag your component - 
 ```
