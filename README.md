@@ -3,16 +3,20 @@ This repo is for distribution on bower. The goal of this repo is to do a POC for
 
 ### Steps to create a bower component:
 
-- First, install generator-wcmodules. This will create a basic bower component structure with all the required dependencies.
+- First, install [generator-wcmodules](https://github.com/ttn-himanshu/generator-wcmodules ). This will create a basic bower component structure with all the required dependencies.
 
-- Tag your component - 
+- Run ```grunt serve```. This will start server on 8000 port.
+
+- Do changes on src folder commit your changes and run ```grunt build```. This will create dist folder with all basic requirements.
+
+- Then tag your component - 
 ```
 git tag -a v0.1.0 -m "basic bower component"
 ```
 
-- Push tag to remote repo - 
+- Push your changes - 
 ```
-git push origin --tags
+git push origin master --tags
 ```
 
 - Register you component on bower by 
@@ -68,9 +72,7 @@ Available versions:
 bower install poc-module
 ```
 
-## Installation
 
-First, install [generator-wcmodules](https://github.com/ttn-himanshu/generator-wcmodules ).
 
 
 ## Install
