@@ -19,10 +19,20 @@ git tag -a v0.1.0 -m "basic bower component"
 git push origin master --tags
 ```
 
-- Register you component on bower by 
+- Register your public component on bower by 
 ```
 bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
 ```
+
+- Register your private component on bower 
+First install private bower on your machine - ```npm install -g private-bower```
+Then add ``` "registry": "http://localhost:5678" ``` to .bowerrc file of your bower component, if not then create one. Registry url is one from where you want to host private bower server and want to register  your private bower components. 
+Note :- This registry url should also be added to your core project so that bower can install dependecies from that url. For public packages like angular bower will hit public bower server if not found on private bower server.
+
+Now run :-
+```
+bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
+
 - After registering run 
 ```
 bower info YourAwesomePackageName
@@ -66,10 +76,10 @@ Available versions:
  - 0.1.0
 ```
 
-- Now on any project you can install this module by 
+- If bower component is registered on private bower then add ``` "registry": "http://localhost:5678" ``` to .bowerrc file then run below command.
 
 ```
-bower install poc-module
+bower install poc-module 
 ```
 
 
@@ -78,6 +88,8 @@ Add following script to index.html
 ```
 <script src="bower_components/poc-module/dist/pocmodule.js"></script>
 ```
+Then add dependency to app.js.
+
 then use below directive on html
 ```
 <test-directive></test-directive>
