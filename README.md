@@ -35,6 +35,7 @@ Note :- This registry url should also be added to your core project so that bowe
 Now run :-
 ```
 bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
+```
 
 - After registering run 
 ```
