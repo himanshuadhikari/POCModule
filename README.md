@@ -23,9 +23,12 @@ git push origin master --tags
 ```
 bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
 ```
+https://github.com/Hacklone/private-bower
 
 - Register your private component on bower 
-First install private bower on your machine - ```npm install -g private-bower```
+First install [private-bower](https://github.com/Hacklone/private-bower). on your machine - ```npm install -g private-bower```
+Then run ```private-bower```. This will start a private-bower server on 5678 port.
+
 Then add ``` "registry": "http://localhost:5678" ``` to .bowerrc file of your bower component, if not then create one. Registry url is one from where you want to host private bower server and want to register  your private bower components. 
 Note :- This registry url should also be added to your core project so that bower can install dependecies from that url. For public packages like angular bower will hit public bower server if not found on private bower server.
 
