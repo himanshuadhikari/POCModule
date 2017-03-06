@@ -23,7 +23,7 @@ git push origin master --tags
 ```
 bower register poc-module<package name> git@github.com:ttn-himanshu/POCModule.git<git/bitbucket url>
 ```
-
+#### private-bower
 - Register your private component on bower 
 First install [private-bower](https://github.com/Hacklone/private-bower). on your machine - ```npm install -g private-bower```
 Then run ```private-bower```. This will start a private-bower server on 5678 port.
